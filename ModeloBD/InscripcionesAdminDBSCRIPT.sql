@@ -130,8 +130,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Bloque` (
   `cod_bloque` INT NOT NULL,
-  `hora_inicio` DATETIME NOT NULL,
-  `hora_termino` DATETIME NOT NULL,
+  `hora_inicio` TIME NOT NULL,
+  `hora_termino` TIME NOT NULL,
   PRIMARY KEY (`cod_bloque`))
 ENGINE = InnoDB;
 
