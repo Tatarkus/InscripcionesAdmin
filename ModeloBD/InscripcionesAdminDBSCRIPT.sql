@@ -84,7 +84,7 @@ ENGINE = InnoDB;
 -- Table `InscripcionesAdmin`.`Ramo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Ramo` (
-  `sigla` INT NOT NULL,
+  `sigla` VARCHAR(6) NOT NULL,
   `nom_ramo` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`sigla`))
 ENGINE = InnoDB;
@@ -95,7 +95,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`MallaRamo` (
   `Malla_cod_malla` INT NOT NULL,
-  `Ramo_sigla` INT NOT NULL,
+  `Ramo_sigla` VARCHAR(6) NOT NULL,
+  `semestre` INT,
   CONSTRAINT `fk_MallaRamo_Malla1`
     FOREIGN KEY (`Malla_cod_malla`)
     REFERENCES `InscripcionesAdmin`.`Malla` (`cod_malla`)
@@ -115,7 +116,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Seccion` (
   `cod_seccion` INT NOT NULL,
   `seccion` VARCHAR(45) NOT NULL,
-  `Ramo_sigla` INT NOT NULL,
+  `Ramo_sigla` VARCHAR(6) NOT NULL,
   PRIMARY KEY (`cod_seccion`),
   CONSTRAINT `fk_Seccion_Ramo1`
     FOREIGN KEY (`Ramo_sigla`)
