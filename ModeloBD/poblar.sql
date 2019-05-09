@@ -72,13 +72,21 @@ INSERT INTO inscripcionesadmin.malla (cod_malla, nom_malla, `Carrera_cod_carrera
 -- -----------------------------------------------------
 
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
-	VALUES ('ADMBD', 'Administración Base de Datos');
+	VALUES ('ADMBDA', 'Administración Base de Datos');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('ARQSW', 'Arquitectura de Software');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('BPM', 'Procesos de Negocio');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('COCI1', 'Cocina 1');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('EMPR', 'Emprendimiento');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('ESTD1', 'Estadistica 1');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('ETCAP', 'Ética Profesional');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('EVAPRO', 'Evaluación de Proyectos');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('FRNB1', 'Francés Básico 1');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
@@ -94,6 +102,10 @@ INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo)
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('INGB2', 'Inglés Básico 2');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('INGI1', 'Inglés Intermedio 1');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('INGI2', 'Inglés Intermedio 2');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('INGSW', 'Ingeniería de Software');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('MAT1', 'Matemáticas 1');
@@ -102,6 +114,145 @@ INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo)
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('MATFIN', 'Matematicas Financieras');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
+	VALUES ('PRAWM', 'Programación Aplicaciones Web Mobile');
+INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('PRGBD', 'Programación Base de Datos');
 INSERT INTO inscripcionesadmin.ramo (sigla, nom_ramo) 
 	VALUES ('PRJVW', 'Programación Java Web');
+
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`MALLARAMO`
+-- -----------------------------------------------------
+
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGA1', 5);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGA2', 6);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'ADMBD', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGSW', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'INGSW', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'PRJVW', 5);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'INGA1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'INGA2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'IDSYS', 5);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (2, 'IDSYS', 5);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'INGA1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'INGA2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'COCI1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (4, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (4, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (4, 'INGA1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (4, 'INGA2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (4, 'INGSW', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (5, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (5, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (5, 'INGA1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (5, 'INGA2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (5, 'FRNB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (6, 'INGB1', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (6, 'INGB2', 2);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (6, 'INGA1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (6, 'INGA2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (6, 'MATFIN', 1);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (3, 'FRNB1', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'PRAWM', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'INGI2', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'ARQSW', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'ETCAP', 3);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'EMPR', 4);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'BPM', 5);
+INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semestre) 
+	VALUES (1, 'EVAPRO', 5);
+
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`MALLARAMO`
+-- -----------------------------------------------------
+
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (1, '001D', 'INGA1');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (2, '002D', 'INGA1');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (3, '003D', 'INGA1');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (4, '001D', 'IDSYS');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (5, '002D', 'IDSYS');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (6, '001D', 'BPM');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (7, '002D', 'BPM');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (8, '001D', 'PRJVW');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (9, '001D', 'EVAPRO');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (10, '002D', 'EVAPRO');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (11, '001D', 'ARQSW');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (12, '002D', 'ARQSW');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (13, '001D', 'INGI2');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (14, '002D', 'INGI2');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (15, '003D', 'INGI2');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (16, '001D', 'PRAWM');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (17, '002D', 'PRAWM');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (18, '001D', 'EMPR');
+INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
+	VALUES (19, '001D', 'ADMBD');
+
