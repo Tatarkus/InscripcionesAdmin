@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Usuario` (
   `password` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
   `Tipo_usuario` INT NOT NULL,
+  `semestre` INT NOT NULL,
   PRIMARY KEY (`run`),
   CONSTRAINT `fk_Alumno_Malla1`
     FOREIGN KEY (`Malla_cod_malla`)
