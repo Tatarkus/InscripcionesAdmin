@@ -214,7 +214,7 @@ INSERT INTO inscripcionesadmin.mallaramo (`Malla_cod_malla`, `Ramo_sigla`, semes
 
 
 -- -----------------------------------------------------
--- Table `InscripcionesAdmin`.`MALLARAMO`
+-- Table `InscripcionesAdmin`.`SECCION`
 -- -----------------------------------------------------
 
 INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
@@ -256,3 +256,56 @@ INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`)
 INSERT INTO inscripcionesadmin.seccion (cod_seccion, seccion, `Ramo_sigla`) 
 	VALUES (19, '001D', 'ADMBD');
 
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`CLASE`
+-- -----------------------------------------------------
+
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (1, 1, 1, 'Lunes', 'L21');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (2, 1, 2, 'Lunes', 'L21');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (3, 4, 5, 'Martes', 'L21');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (4, 4, 6, 'Martes', 'L21');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (5, 9, 7, 'Martes', 'AV201');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (6, 9, 8, 'Martes', 'AV201');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (7, 6, 9, 'Martes', 'L28');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (8, 6, 10, 'Martes', 'L28');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (9, 8, 13, 'Martes', 'L19');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (10, 8, 14, 'Martes', 'L19');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (11, 3, 9, 'Miercoles', 'AV401');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (12, 3, 10, 'Miercoles', 'AV401');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (13, 4, 5, 'Jueves', 'T505');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (14, 4, 6, 'Jueves', 'T505');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (15, 6, 9, 'Jueves', 'T505');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (16, 6, 10, 'Jueves', 'T505');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (17, 9, 6, 'Viernes', 'L204');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (18, 9, 7, 'Viernes', 'L204');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (19, 9, 8, 'Viernes', 'L204');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (20, 3, 9, 'Viernes', 'AV401');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (21, 3, 10, 'Viernes', 'AV401');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (22, 8, 12, 'Viernes', 'L16');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (23, 8, 13, 'Viernes', 'L16');
+INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
+	VALUES (24, 8, 14, 'Viernes', 'L16');
