@@ -309,3 +309,36 @@ INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_
 	VALUES (23, 8, 13, 'Viernes', 'L16');
 INSERT INTO inscripcionesadmin.clase (cod_clase, `Seccion_cod_seccion`, `Bloque_cod_bloque`, `Dia`, `Sala`) 
 	VALUES (24, 8, 14, 'Viernes', 'L16');
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`TIPO_USUARIO`
+-- -----------------------------------------------------
+
+
+INSERT INTO inscripcionesadmin.tipo_usuario (cod_tipo, tipo) 
+	VALUES (1, 'admin');
+INSERT INTO inscripcionesadmin.tipo_usuario (cod_tipo, tipo) 
+	VALUES (2, 'superuser');
+INSERT INTO inscripcionesadmin.tipo_usuario (cod_tipo, tipo) 
+	VALUES (3, 'user');
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`USUARIO`
+-- -----------------------------------------------------
+
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (11111111, '1', NULL, 'admin', 'admin', '123', 'admin@mail.com', 1, 0);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (11222333, '4', 5, 'Miguel', 'Turista', '123', 'miguel@mail.com', 3, 2);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (12345678, '1', 4, 'Ignacio', 'Fuentes', '123', 'ingacio@mail.com', 3, 1);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (17305233, '2', 1, 'Matias Alonso', 'Fuentes Salinas', '123', 'matias@mail.com', 3, 5);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (19456789, 'k', 3, 'Gordon', 'Ramsay', '123', 'gordon@mail.com', 3, 3);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (20105321, '6', 6, 'James', 'Bezos', '123', 'james@mail.com', 3, 3);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (20123122, '5', 2, 'Carlos Max', 'Mellado', '123', 'carlos@correo.com', 3, 4);
+INSERT INTO inscripcionesadmin.usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_usuario`, semestre) 
+	VALUES (20445121, '9', 1, 'Tomás', 'Farías', '123', 'tomas@mail.com', 3, 5);
