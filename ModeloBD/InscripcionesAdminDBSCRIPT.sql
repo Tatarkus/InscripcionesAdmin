@@ -145,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Clase` (
   `Seccion_cod_seccion` INT NOT NULL,
   `Bloque_cod_bloque` INT NOT NULL,
   `Dia` VARCHAR(10) NOT NULL,
+  `Sala` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`cod_clase`),
   CONSTRAINT `fk_Clase_Seccion1`
     FOREIGN KEY (`Seccion_cod_seccion`)
