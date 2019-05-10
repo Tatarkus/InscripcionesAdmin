@@ -7,7 +7,7 @@
         <property name="databaseName" value="InscripcionesAdmin"/>
         <property name="User" value="root"/>
         <property name="Password" value="avaras08"/>
-        <property name="URL" value="jdbc:mysql://localhost:3306/inscripcionesadmin?zeroDateTimeBehavior=convertToNull"/>
+        <property name="URL" value="jdbc:mysql://localhost:3306/InscripcionesAdmin?zeroDateTimeBehavior=convertToNull"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="java:app/inscripciones" object-type="user" pool-name="mysql_inscripcionesadmin_rootPool"/>

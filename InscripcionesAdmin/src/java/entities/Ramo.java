@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Thomas
  */
 @Entity
-@Table(name = "ramo")
+@Table(name = "Ramo")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Ramo.findAll", query = "SELECT r FROM Ramo r")
@@ -40,7 +40,7 @@ public class Ramo implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "sigla")
-    private Integer sigla;
+    private String sigla;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -54,20 +54,20 @@ public class Ramo implements Serializable {
     public Ramo() {
     }
 
-    public Ramo(Integer sigla) {
+    public Ramo(String sigla) {
         this.sigla = sigla;
     }
 
-    public Ramo(Integer sigla, String nomRamo) {
+    public Ramo(String sigla, String nomRamo) {
         this.sigla = sigla;
         this.nomRamo = nomRamo;
     }
 
-    public Integer getSigla() {
+    public String getSigla() {
         return sigla;
     }
 
-    public void setSigla(Integer sigla) {
+    public void setSigla(String sigla) {
         this.sigla = sigla;
     }
 

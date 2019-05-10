@@ -153,7 +153,7 @@ public class RamoController implements Serializable {
             }
             if (object instanceof Ramo) {
                 Ramo o = (Ramo) object;
-                return getStringKey(o.getSigla());
+                return (o.getSigla());
             } else {
                 Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), Ramo.class.getName()});
                 return null;
