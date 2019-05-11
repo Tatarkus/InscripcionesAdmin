@@ -8,15 +8,15 @@
 
     <ui:composition>
 
-        <p:dialog id="MallaEditDlg" widgetVar="MallaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMallaTitle}">
+        <p:dialog id="MallaEditDlg" widgetVar="MallaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="Editar Malla">
             <h:form id="MallaEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{mallaController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditMallaLabel_codMalla}" for="codMalla" />
+                        <p:outputLabel value="Codigo de Malla:" for="codMalla" />
                         <p:inputText id="codMalla" value="#{mallaController.selected.codMalla}" title="#{bundle.EditMallaTitle_codMalla}" required="true" requiredMessage="#{bundle.EditMallaRequiredMessage_codMalla}"/>
-                        <p:outputLabel value="#{bundle.EditMallaLabel_nomMalla}" for="nomMalla" />
+                        <p:outputLabel value="Nombre de Malla:" for="nomMalla" />
                         <p:inputText id="nomMalla" value="#{mallaController.selected.nomMalla}" title="#{bundle.EditMallaTitle_nomMalla}" required="true" requiredMessage="#{bundle.EditMallaRequiredMessage_nomMalla}"/>
-                        <p:outputLabel value="#{bundle.EditMallaLabel_carreracodcarrera}" for="carreracodcarrera" />
+                        <p:outputLabel value="Carrera:" for="carreracodcarrera" />
                         <p:selectOneMenu id="carreracodcarrera" value="#{mallaController.selected.carreracodcarrera}" required="true" requiredMessage="#{bundle.EditMallaRequiredMessage_carreracodcarrera}">
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{carreraController.itemsAvailableSelectOne}"

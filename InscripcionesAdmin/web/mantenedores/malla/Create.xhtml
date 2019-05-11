@@ -8,23 +8,23 @@
 
     <ui:composition>
 
-        <p:dialog id="MallaCreateDlg" widgetVar="MallaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMallaTitle}">
+        <p:dialog id="MallaCreateDlg" widgetVar="MallaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="CREAR MALLA NUEVA">
             <h:form id="MallaCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{mallaController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateMallaLabel_codMalla}" for="codMalla" />
+                        <p:outputLabel value="Codigo de Malla:" for="codMalla" />
                         <p:inputText id="codMalla" value="#{mallaController.selected.codMalla}" title="#{bundle.CreateMallaTitle_codMalla}" required="true" requiredMessage="#{bundle.CreateMallaRequiredMessage_codMalla}"/>
-                        <p:outputLabel value="#{bundle.CreateMallaLabel_nomMalla}" for="nomMalla" />
+                        <p:outputLabel value="Nombre de Malla:" for="nomMalla" />
                         <p:inputText id="nomMalla" value="#{mallaController.selected.nomMalla}" title="#{bundle.CreateMallaTitle_nomMalla}" required="true" requiredMessage="#{bundle.CreateMallaRequiredMessage_nomMalla}"/>
-                        <p:outputLabel value="#{bundle.CreateMallaLabel_carreracodcarrera}" for="carreracodcarrera" />
+                        <p:outputLabel value="Carrera" for="carreracodcarrera" />
                         <p:selectOneMenu id="carreracodcarrera" value="#{mallaController.selected.carreracodcarrera}" required="true" requiredMessage="#{bundle.EditMallaRequiredMessage_carreracodcarrera}">
                             <f:selectItems value="#{carreraController.itemsAvailableSelectOne}"
                                            var="carreracodcarreraItem"
                                            itemValue="#{carreracodcarreraItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{mallaController.create}" value="#{bundle.Save}" update="display,:MallaListForm:datalist,:growl" oncomplete="handleSubmit(args,'MallaCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="MallaCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{mallaController.create}" value="Crear" update="display,:MallaListForm:datalist,:growl" oncomplete="handleSubmit(args,'MallaCreateDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="MallaCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

@@ -8,18 +8,18 @@
 
     <ui:composition>
 
-        <p:dialog id="MallaViewDlg" widgetVar="MallaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMallaTitle}">
+        <p:dialog id="MallaViewDlg" widgetVar="MallaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Vista">
             <h:form id="MallaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{mallaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewMallaLabel_codMalla}"/>
+                        <h:outputText value="Codigo de Malla:"/>
                         <h:outputText value="#{mallaController.selected.codMalla}" title="#{bundle.ViewMallaTitle_codMalla}"/>
-                        <h:outputText value="#{bundle.ViewMallaLabel_nomMalla}"/>
+                        <h:outputText value="Nombre de Malla:"/>
                         <h:outputText value="#{mallaController.selected.nomMalla}" title="#{bundle.ViewMallaTitle_nomMalla}"/>
-                        <h:outputText value="#{bundle.ViewMallaLabel_carreracodcarrera}"/>
+                        <h:outputText value="Carrera:"/>
                         <h:outputText value="#{mallaController.selected.carreracodcarrera}" title="#{bundle.ViewMallaTitle_carreracodcarrera}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="MallaViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="MallaViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

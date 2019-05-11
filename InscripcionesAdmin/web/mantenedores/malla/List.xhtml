@@ -15,7 +15,7 @@
 
         <ui:define name="body">
             <h:form id="MallaListForm">
-                <p:panel header="#{bundle.ListMallaTitle}">
+                <p:panel header="LISTA DE MALLAS">
                     <p:dataTable id="datalist" value="#{mallaController.items}" var="item"
                                  selectionMode="single" selection="#{mallaController.selected}"
                                  paginator="true"
@@ -29,27 +29,27 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListMallaTitle_codMalla}"/>
+                                <h:outputText value="Codigo de Malla"/>
                             </f:facet>
                             <h:outputText value="#{item.codMalla}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListMallaTitle_nomMalla}"/>
+                                <h:outputText value="Nombre de Malla"/>
                             </f:facet>
                             <h:outputText value="#{item.nomMalla}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListMallaTitle_carreracodcarrera}"/>
+                                <h:outputText value="Carrera"/>
                             </f:facet>
                             <h:outputText value="#{item.carreracodcarrera}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{mallaController.prepareCreate}" update=":MallaCreateForm" oncomplete="PF('MallaCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":MallaViewForm" oncomplete="PF('MallaViewDialog').show()" disabled="#{empty mallaController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":MallaEditForm" oncomplete="PF('MallaEditDialog').show()" disabled="#{empty mallaController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{mallaController.destroy}" update=":growl,datalist" disabled="#{empty mallaController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{mallaController.prepareCreate}" update=":MallaCreateForm" oncomplete="PF('MallaCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":MallaViewForm" oncomplete="PF('MallaViewDialog').show()" disabled="#{empty mallaController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":MallaEditForm" oncomplete="PF('MallaEditDialog').show()" disabled="#{empty mallaController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{mallaController.destroy}" update=":growl,datalist" disabled="#{empty mallaController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
