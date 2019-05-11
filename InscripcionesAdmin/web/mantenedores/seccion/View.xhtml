@@ -8,18 +8,18 @@
 
     <ui:composition>
 
-        <p:dialog id="SeccionViewDlg" widgetVar="SeccionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewSeccionTitle}">
+        <p:dialog id="SeccionViewDlg" widgetVar="SeccionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="VISTA">
             <h:form id="SeccionViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{seccionController.selected != null}">
-                        <h:outputText value="#{bundle.ViewSeccionLabel_codSeccion}"/>
+                        <h:outputText value="Codigo de Sección:"/>
                         <h:outputText value="#{seccionController.selected.codSeccion}" title="#{bundle.ViewSeccionTitle_codSeccion}"/>
                         <h:outputText value="#{bundle.ViewSeccionLabel_seccion}"/>
                         <h:outputText value="#{seccionController.selected.seccion}" title="#{bundle.ViewSeccionTitle_seccion}"/>
-                        <h:outputText value="#{bundle.ViewSeccionLabel_ramosigla}"/>
+                        <h:outputText value="Sigla de Ramo:"/>
                         <h:outputText value="#{seccionController.selected.ramosigla}" title="#{bundle.ViewSeccionTitle_ramosigla}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="SeccionViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="SeccionViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
