@@ -8,20 +8,20 @@
 
     <ui:composition>
 
-        <p:dialog id="ClaseEditDlg" widgetVar="ClaseEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditClaseTitle}">
+        <p:dialog id="ClaseEditDlg" widgetVar="ClaseEditDialog" modal="true" resizable="false" appendTo="@(body)" header="EDITAR CLASE">
             <h:form id="ClaseEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{claseController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditClaseLabel_codClase}" for="codClase" />
+                        <p:outputLabel value="Codigo de Clase:" for="codClase" />
                         <p:inputText id="codClase" value="#{claseController.selected.codClase}" title="#{bundle.EditClaseTitle_codClase}" required="true" requiredMessage="#{bundle.EditClaseRequiredMessage_codClase}"/>
-                        <p:outputLabel value="#{bundle.EditClaseLabel_bloquecodbloque}" for="bloquecodbloque" />
+                        <p:outputLabel value="Bloque:" for="bloquecodbloque" />
                         <p:selectOneMenu id="bloquecodbloque" value="#{claseController.selected.bloquecodbloque}" required="true" requiredMessage="#{bundle.EditClaseRequiredMessage_bloquecodbloque}">
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{bloqueController.itemsAvailableSelectOne}"
                                            var="bloquecodbloqueItem"
                                            itemValue="#{bloquecodbloqueItem}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.EditClaseLabel_seccioncodseccion}" for="seccioncodseccion" />
+                        <p:outputLabel value="Sección:" for="seccioncodseccion" />
                         <p:selectOneMenu id="seccioncodseccion" value="#{claseController.selected.seccioncodseccion}" required="true" requiredMessage="#{bundle.EditClaseRequiredMessage_seccioncodseccion}">
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{seccionController.itemsAvailableSelectOne}"
@@ -29,8 +29,8 @@
                                            itemValue="#{seccioncodseccionItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{claseController.update}" value="#{bundle.Save}" update="display,:ClaseListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClaseEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="ClaseEditDialog.hide()"/>
+                    <p:commandButton actionListener="#{claseController.update}" value="Guardar" update="display,:ClaseListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClaseEditDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="ClaseEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

@@ -8,18 +8,18 @@
 
     <ui:composition>
 
-        <p:dialog id="ClaseViewDlg" widgetVar="ClaseViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewClaseTitle}">
+        <p:dialog id="ClaseViewDlg" widgetVar="ClaseViewDialog" modal="true" resizable="false" appendTo="@(body)" header="VISTA">
             <h:form id="ClaseViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{claseController.selected != null}">
-                        <h:outputText value="#{bundle.ViewClaseLabel_codClase}"/>
+                        <h:outputText value="Codigo de Clase:"/>
                         <h:outputText value="#{claseController.selected.codClase}" title="#{bundle.ViewClaseTitle_codClase}"/>
-                        <h:outputText value="#{bundle.ViewClaseLabel_bloquecodbloque}"/>
+                        <h:outputText value="Bloque:"/>
                         <h:outputText value="#{claseController.selected.bloquecodbloque}" title="#{bundle.ViewClaseTitle_bloquecodbloque}"/>
-                        <h:outputText value="#{bundle.ViewClaseLabel_seccioncodseccion}"/>
+                        <h:outputText value="Sección:"/>
                         <h:outputText value="#{claseController.selected.seccioncodseccion}" title="#{bundle.ViewClaseTitle_seccioncodseccion}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="ClaseViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="ClaseViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

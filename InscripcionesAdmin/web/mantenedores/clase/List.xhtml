@@ -15,7 +15,7 @@
 
         <ui:define name="body">
             <h:form id="ClaseListForm">
-                <p:panel header="#{bundle.ListClaseTitle}">
+                <p:panel header="LISTA DE CLASES">
                     <p:dataTable id="datalist" value="#{claseController.items}" var="item"
                                  selectionMode="single" selection="#{claseController.selected}"
                                  paginator="true"
@@ -29,27 +29,27 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListClaseTitle_codClase}"/>
+                                <h:outputText value="Codigo de Clase"/>
                             </f:facet>
                             <h:outputText value="#{item.codClase}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListClaseTitle_bloquecodbloque}"/>
+                                <h:outputText value="Bloque"/>
                             </f:facet>
                             <h:outputText value="#{item.bloquecodbloque}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListClaseTitle_seccioncodseccion}"/>
+                                <h:outputText value="Sección"/>
                             </f:facet>
                             <h:outputText value="#{item.seccioncodseccion}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{claseController.prepareCreate}" update=":ClaseCreateForm" oncomplete="PF('ClaseCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ClaseViewForm" oncomplete="PF('ClaseViewDialog').show()" disabled="#{empty claseController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ClaseEditForm" oncomplete="PF('ClaseEditDialog').show()" disabled="#{empty claseController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{claseController.destroy}" update=":growl,datalist" disabled="#{empty claseController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{claseController.prepareCreate}" update=":ClaseCreateForm" oncomplete="PF('ClaseCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":ClaseViewForm" oncomplete="PF('ClaseViewDialog').show()" disabled="#{empty claseController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":ClaseEditForm" oncomplete="PF('ClaseEditDialog').show()" disabled="#{empty claseController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{claseController.destroy}" update=":growl,datalist" disabled="#{empty claseController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
