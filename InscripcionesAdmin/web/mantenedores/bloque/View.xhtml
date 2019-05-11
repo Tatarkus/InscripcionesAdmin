@@ -8,22 +8,22 @@
 
     <ui:composition>
 
-        <p:dialog id="BloqueViewDlg" widgetVar="BloqueViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewBloqueTitle}">
+        <p:dialog id="BloqueViewDlg" widgetVar="BloqueViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Vista">
             <h:form id="BloqueViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{bloqueController.selected != null}">
-                        <h:outputText value="#{bundle.ViewBloqueLabel_codBloque}"/>
+                        <h:outputText value="Codigo de Bloque:"/>
                         <h:outputText value="#{bloqueController.selected.codBloque}" title="#{bundle.ViewBloqueTitle_codBloque}"/>
-                        <h:outputText value="#{bundle.ViewBloqueLabel_horaInicio}"/>
+                        <h:outputText value="Hora de Inicio:"/>
                         <h:outputText value="#{bloqueController.selected.horaInicio}" title="#{bundle.ViewBloqueTitle_horaInicio}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
-                        <h:outputText value="#{bundle.ViewBloqueLabel_horaTermino}"/>
+                        <h:outputText value="Hora de Termino: "/>
                         <h:outputText value="#{bloqueController.selected.horaTermino}" title="#{bundle.ViewBloqueTitle_horaTermino}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="BloqueViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="BloqueViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

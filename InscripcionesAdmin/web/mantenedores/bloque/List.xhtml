@@ -15,7 +15,7 @@
 
         <ui:define name="body">
             <h:form id="BloqueListForm">
-                <p:panel header="#{bundle.ListBloqueTitle}">
+                <p:panel header="LISTA DE BLOQUES">
                     <p:dataTable id="datalist" value="#{bloqueController.items}" var="item"
                                  selectionMode="single" selection="#{bloqueController.selected}"
                                  paginator="true"
@@ -29,13 +29,13 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListBloqueTitle_codBloque}"/>
+                                <h:outputText value="Codigo de Bloque"/>
                             </f:facet>
                             <h:outputText value="#{item.codBloque}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListBloqueTitle_horaInicio}"/>
+                                <h:outputText value="Hora de Inicio"/>
                             </f:facet>
                             <h:outputText value="#{item.horaInicio}">
                                 <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
@@ -43,17 +43,17 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListBloqueTitle_horaTermino}"/>
+                                <h:outputText value="Hora de Termino"/>
                             </f:facet>
                             <h:outputText value="#{item.horaTermino}">
                                 <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                             </h:outputText>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{bloqueController.prepareCreate}" update=":BloqueCreateForm" oncomplete="PF('BloqueCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":BloqueViewForm" oncomplete="PF('BloqueViewDialog').show()" disabled="#{empty bloqueController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":BloqueEditForm" oncomplete="PF('BloqueEditDialog').show()" disabled="#{empty bloqueController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{bloqueController.destroy}" update=":growl,datalist" disabled="#{empty bloqueController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{bloqueController.prepareCreate}" update=":BloqueCreateForm" oncomplete="PF('BloqueCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":BloqueViewForm" oncomplete="PF('BloqueViewDialog').show()" disabled="#{empty bloqueController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":BloqueEditForm" oncomplete="PF('BloqueEditDialog').show()" disabled="#{empty bloqueController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{bloqueController.destroy}" update=":growl,datalist" disabled="#{empty bloqueController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

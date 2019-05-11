@@ -16,11 +16,11 @@
         <p:growl id="growl" life="3000" />
 
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+            <p:layoutUnit position="north" size="65" header="Administración de inscripciones">
                 <h:form id="menuForm">
                     <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
+                        <p:menuitem value="Inicio" outcome="/index" icon="ui-icon-home"/>
+                        <p:submenu label="Mantenedor">
                             <p:menuitem value="Bloque" outcome="/mantenedores/bloque/List.xhtml" />
                             <p:menuitem value="Clase" outcome="/mantenedores/clase/List.xhtml" />
                             <p:menuitem value="Malla" outcome="/mantenedores/malla/List.xhtml" />
