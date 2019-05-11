@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="UsuarioCreateDlg" widgetVar="UsuarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUsuarioTitle}">
+        <p:dialog id="UsuarioCreateDlg" widgetVar="UsuarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="CREAR NUEVO USUARIO}">
             <h:form id="UsuarioCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{usuarioController.selected != null}">
@@ -20,25 +20,25 @@
                         <p:inputText id="nombres" value="#{usuarioController.selected.nombres}" title="#{bundle.CreateUsuarioTitle_nombres}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nombres}"/>
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_apellidos}" for="apellidos" />
                         <p:inputText id="apellidos" value="#{usuarioController.selected.apellidos}" title="#{bundle.CreateUsuarioTitle_apellidos}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_apellidos}"/>
-                        <p:outputLabel value="#{bundle.CreateUsuarioLabel_password}" for="password" />
+                        <p:outputLabel value="Contraseña" for="password" />
                         <p:inputText id="password" value="#{usuarioController.selected.password}" title="#{bundle.CreateUsuarioTitle_password}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_password}"/>
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_correo}" for="correo" />
                         <p:inputText id="correo" value="#{usuarioController.selected.correo}" title="#{bundle.CreateUsuarioTitle_correo}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_correo}"/>
-                        <p:outputLabel value="#{bundle.CreateUsuarioLabel_mallacodmalla}" for="mallacodmalla" />
+                        <p:outputLabel value="Malla" for="mallacodmalla" />
                         <p:selectOneMenu id="mallacodmalla" value="#{usuarioController.selected.mallacodmalla}" >
                             <f:selectItems value="#{mallaController.itemsAvailableSelectOne}"
                                            var="mallacodmallaItem"
                                            itemValue="#{mallacodmallaItem}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.CreateUsuarioLabel_tipousuario}" for="tipousuario" />
+                        <p:outputLabel value="Tipo Usuario" for="tipousuario" />
                         <p:selectOneMenu id="tipousuario" value="#{usuarioController.selected.tipousuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_tipousuario}">
                             <f:selectItems value="#{tipoUsuarioController.itemsAvailableSelectOne}"
                                            var="tipousuarioItem"
                                            itemValue="#{tipousuarioItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{usuarioController.create}" value="#{bundle.Save}" update="display,:UsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'UsuarioCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="UsuarioCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{usuarioController.create}" value="Crear" update="display,:UsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'UsuarioCreateDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

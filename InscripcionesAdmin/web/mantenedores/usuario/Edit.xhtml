@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="UsuarioEditDlg" widgetVar="UsuarioEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUsuarioTitle}">
+        <p:dialog id="UsuarioEditDlg" widgetVar="UsuarioEditDialog" modal="true" resizable="false" appendTo="@(body)" header="EDITAR USUARIO">
             <h:form id="UsuarioEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{usuarioController.selected != null}">
@@ -20,18 +20,18 @@
                         <p:inputText id="nombres" value="#{usuarioController.selected.nombres}" title="#{bundle.EditUsuarioTitle_nombres}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nombres}"/>
                         <p:outputLabel value="#{bundle.EditUsuarioLabel_apellidos}" for="apellidos" />
                         <p:inputText id="apellidos" value="#{usuarioController.selected.apellidos}" title="#{bundle.EditUsuarioTitle_apellidos}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_apellidos}"/>
-                        <p:outputLabel value="#{bundle.EditUsuarioLabel_password}" for="password" />
+                        <p:outputLabel value="Contraseña:" for="password" />
                         <p:inputText id="password" value="#{usuarioController.selected.password}" title="#{bundle.EditUsuarioTitle_password}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_password}"/>
                         <p:outputLabel value="#{bundle.EditUsuarioLabel_correo}" for="correo" />
                         <p:inputText id="correo" value="#{usuarioController.selected.correo}" title="#{bundle.EditUsuarioTitle_correo}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_correo}"/>
-                        <p:outputLabel value="#{bundle.EditUsuarioLabel_mallacodmalla}" for="mallacodmalla" />
+                        <p:outputLabel value="Malla:" for="mallacodmalla" />
                         <p:selectOneMenu id="mallacodmalla" value="#{usuarioController.selected.mallacodmalla}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{mallaController.itemsAvailableSelectOne}"
                                            var="mallacodmallaItem"
                                            itemValue="#{mallacodmallaItem}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.EditUsuarioLabel_tipousuario}" for="tipousuario" />
+                        <p:outputLabel value="Tipo de Usuario:" for="tipousuario" />
                         <p:selectOneMenu id="tipousuario" value="#{usuarioController.selected.tipousuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_tipousuario}">
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{tipoUsuarioController.itemsAvailableSelectOne}"
@@ -39,8 +39,8 @@
                                            itemValue="#{tipousuarioItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{usuarioController.update}" value="#{bundle.Save}" update="display,:UsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UsuarioEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="UsuarioEditDialog.hide()"/>
+                    <p:commandButton actionListener="#{usuarioController.update}" value="Guardar" update="display,:UsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UsuarioEditDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="UsuarioEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
