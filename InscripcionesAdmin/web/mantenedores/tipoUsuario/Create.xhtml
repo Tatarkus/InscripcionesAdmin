@@ -8,17 +8,17 @@
 
     <ui:composition>
 
-        <p:dialog id="TipoUsuarioCreateDlg" widgetVar="TipoUsuarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTipoUsuarioTitle}">
+        <p:dialog id="TipoUsuarioCreateDlg" widgetVar="TipoUsuarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="CREAR NUEVO TIPO DE USUARIO">
             <h:form id="TipoUsuarioCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tipoUsuarioController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateTipoUsuarioLabel_codTipo}" for="codTipo" />
+                        <p:outputLabel value="Codigo Tipo:" for="codTipo" />
                         <p:inputText id="codTipo" value="#{tipoUsuarioController.selected.codTipo}" title="#{bundle.CreateTipoUsuarioTitle_codTipo}" required="true" requiredMessage="#{bundle.CreateTipoUsuarioRequiredMessage_codTipo}"/>
-                        <p:outputLabel value="#{bundle.CreateTipoUsuarioLabel_tipo}" for="tipo" />
+                        <p:outputLabel value="Tipo de Usuario:" for="tipo" />
                         <p:inputText id="tipo" value="#{tipoUsuarioController.selected.tipo}" title="#{bundle.CreateTipoUsuarioTitle_tipo}" required="true" requiredMessage="#{bundle.CreateTipoUsuarioRequiredMessage_tipo}"/>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{tipoUsuarioController.create}" value="#{bundle.Save}" update="display,:TipoUsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'TipoUsuarioCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoUsuarioCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{tipoUsuarioController.create}" value="Crear" update="display,:TipoUsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'TipoUsuarioCreateDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="TipoUsuarioCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

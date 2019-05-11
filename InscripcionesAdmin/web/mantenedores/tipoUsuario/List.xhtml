@@ -15,7 +15,7 @@
 
         <ui:define name="body">
             <h:form id="TipoUsuarioListForm">
-                <p:panel header="#{bundle.ListTipoUsuarioTitle}">
+                <p:panel header="Lista de Usuarios">
                     <p:dataTable id="datalist" value="#{tipoUsuarioController.items}" var="item"
                                  selectionMode="single" selection="#{tipoUsuarioController.selected}"
                                  paginator="true"
@@ -29,21 +29,21 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoUsuarioTitle_codTipo}"/>
+                                <h:outputText value="Codigo de Tipo"/>
                             </f:facet>
                             <h:outputText value="#{item.codTipo}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoUsuarioTitle_tipo}"/>
+                                <h:outputText value="Tipo de Usuario"/>
                             </f:facet>
                             <h:outputText value="#{item.tipo}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tipoUsuarioController.prepareCreate}" update=":TipoUsuarioCreateForm" oncomplete="PF('TipoUsuarioCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":TipoUsuarioViewForm" oncomplete="PF('TipoUsuarioViewDialog').show()" disabled="#{empty tipoUsuarioController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":TipoUsuarioEditForm" oncomplete="PF('TipoUsuarioEditDialog').show()" disabled="#{empty tipoUsuarioController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tipoUsuarioController.destroy}" update=":growl,datalist" disabled="#{empty tipoUsuarioController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{tipoUsuarioController.prepareCreate}" update=":TipoUsuarioCreateForm" oncomplete="PF('TipoUsuarioCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":TipoUsuarioViewForm" oncomplete="PF('TipoUsuarioViewDialog').show()" disabled="#{empty tipoUsuarioController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":TipoUsuarioEditForm" oncomplete="PF('TipoUsuarioEditDialog').show()" disabled="#{empty tipoUsuarioController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{tipoUsuarioController.destroy}" update=":growl,datalist" disabled="#{empty tipoUsuarioController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
