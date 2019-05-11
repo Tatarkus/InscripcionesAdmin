@@ -8,16 +8,16 @@
 
     <ui:composition>
 
-        <p:dialog id="CarreraViewDlg" widgetVar="CarreraViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCarreraTitle}">
+        <p:dialog id="CarreraViewDlg" widgetVar="CarreraViewDialog" modal="true" resizable="false" appendTo="@(body)" header="VISTA">
             <h:form id="CarreraViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{carreraController.selected != null}">
-                        <h:outputText value="#{bundle.ViewCarreraLabel_codCarrera}"/>
+                        <h:outputText value="Codigo de Carrera:"/>
                         <h:outputText value="#{carreraController.selected.codCarrera}" title="#{bundle.ViewCarreraTitle_codCarrera}"/>
-                        <h:outputText value="#{bundle.ViewCarreraLabel_nomCarrera}"/>
+                        <h:outputText value="Nombre de Carerra:"/>
                         <h:outputText value="#{carreraController.selected.nomCarrera}" title="#{bundle.ViewCarreraTitle_nomCarrera}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="CarreraViewDialog.hide()"/>
+                    <p:commandButton value="Cerrar" onclick="CarreraViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

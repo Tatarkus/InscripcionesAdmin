@@ -15,7 +15,7 @@
 
         <ui:define name="body">
             <h:form id="CarreraListForm">
-                <p:panel header="#{bundle.ListCarreraTitle}">
+                <p:panel header="LISTA DE CARRERAS">
                     <p:dataTable id="datalist" value="#{carreraController.items}" var="item"
                                  selectionMode="single" selection="#{carreraController.selected}"
                                  paginator="true"
@@ -29,21 +29,21 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCarreraTitle_codCarrera}"/>
+                                <h:outputText value="Codigo de Carrera"/>
                             </f:facet>
                             <h:outputText value="#{item.codCarrera}"/>
                         </p:column>
                         <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCarreraTitle_nomCarrera}"/>
+                            <f:facet name="header"> 
+                                <h:outputText value="Nombre de Carrera"/>
                             </f:facet>
                             <h:outputText value="#{item.nomCarrera}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{carreraController.prepareCreate}" update=":CarreraCreateForm" oncomplete="PF('CarreraCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":CarreraViewForm" oncomplete="PF('CarreraViewDialog').show()" disabled="#{empty carreraController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":CarreraEditForm" oncomplete="PF('CarreraEditDialog').show()" disabled="#{empty carreraController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{carreraController.destroy}" update=":growl,datalist" disabled="#{empty carreraController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{carreraController.prepareCreate}" update=":CarreraCreateForm" oncomplete="PF('CarreraCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":CarreraViewForm" oncomplete="PF('CarreraViewDialog').show()" disabled="#{empty carreraController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":CarreraEditForm" oncomplete="PF('CarreraEditDialog').show()" disabled="#{empty carreraController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{carreraController.destroy}" update=":growl,datalist" disabled="#{empty carreraController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
