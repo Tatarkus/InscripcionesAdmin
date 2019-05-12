@@ -107,7 +107,7 @@ public class Carrera implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Carrera[ codCarrera=" + codCarrera + " ]";
+        return nomCarrera;
     }
     
 }

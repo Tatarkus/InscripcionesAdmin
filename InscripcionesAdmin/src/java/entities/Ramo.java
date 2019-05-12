@@ -119,7 +119,7 @@ public class Ramo implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Ramo[ sigla=" + sigla + " ]";
+        return nomRamo;
     }
     
 }

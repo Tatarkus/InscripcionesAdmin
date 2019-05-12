@@ -120,7 +120,7 @@ public class Seccion implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Seccion[ codSeccion=" + codSeccion + " ]";
+        return seccion;
     }
     
 }

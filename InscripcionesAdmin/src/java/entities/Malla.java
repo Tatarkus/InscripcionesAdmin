@@ -135,7 +135,7 @@ public class Malla implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Malla[ codMalla=" + codMalla + " ]";
+        return nomMalla;
     }
     
 }

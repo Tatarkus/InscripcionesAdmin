@@ -124,7 +124,7 @@ public class Bloque implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Bloque[ codBloque=" + codBloque + " ]";
+        return horaInicio+" - "+horaTermino;
     }
     
 }
