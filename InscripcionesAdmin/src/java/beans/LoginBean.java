@@ -17,8 +17,8 @@ import models.UsuarioFacade;
 @SessionScoped
 public class LoginBean implements Serializable {
     @EJB UsuarioFacade user;
-    
     private String nombre;
+    private String correo;
     private String clave;
     private boolean logeado = false;
     private String msg;
@@ -60,14 +60,15 @@ public class LoginBean implements Serializable {
          List<Usuario> lista = user.findAll();
          String password="";
          for (Usuario usuario : lista) {
-             String nombre2 = usuario.getNombre();
-             if (nombre.equals(nombre2)){
+             String correo2 = usuario.getCorreo();
+             if (correo.equals(correo2)){
                  password = usuario.getPassword();
+                 nombre = usuario.getNombres();
                  break;
              }
          }
          
-          if (nombre != null  && clave != null  && clave.equals(password)) {
+          if (correo != null  && clave != null  && clave.equals(password)) {
             logeado = true;
                 msg = "Bienvenid@ " + nombre;
              
