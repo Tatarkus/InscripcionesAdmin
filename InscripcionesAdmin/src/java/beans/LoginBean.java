@@ -75,7 +75,7 @@ public class LoginBean implements Serializable {
                      try {
                 //return "denegado.xhtml";
                 
-                FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("faces/index.xhtml");
             } catch (IOException ex) {
                 Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
             }
