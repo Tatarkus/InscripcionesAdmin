@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/template.xhtml">
+   
+        <ui:define name="title">
+            <h:outputText value="Lista de Mantenedores"></h:outputText>
+            <h:outputStylesheet library="css" name="bootstrap.css"/>
+        </ui:define>
+        
+        <ui:define name="body" >
+           
+            <p:growl id="mensajes" showDetail="true" life="2000" />
+             <h:form class="d-flex justify-content-center pt-5"> 
+               <p:panel header="Login" style="width:600px" >
+                 <h:panelGrid columns="2" cellpadding="5" class="d-flex justify-content-center ">
+                   <h:outputLabel for="correo" value="Correo Electronico:" />                   
+                   <p:inputText value="#{loginBean.correo}" id="correo"
+                      required="true" label="correo" />
+                   <h:outputLabel for="contrasena" value="Contraseña:" />
+                   <p:password value="#{loginBean.contrasena}" id="contrasena" required="true"
+                      label="contrasena" />
+
+                     <p:commandButton id="loginButton" value="Login"
+                        action="#{loginBean.login()}" />
+                     <h:outputLabel></h:outputLabel>
+
+                 </h:panelGrid>
+               </p:panel>
+             </h:form>
+        </ui:define>
+
+</ui:composition>
+
+
+
+
+
+
+</html>
+

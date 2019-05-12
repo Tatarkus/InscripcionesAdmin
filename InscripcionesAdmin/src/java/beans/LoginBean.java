@@ -19,7 +19,7 @@ public class LoginBean implements Serializable {
     @EJB UsuarioFacade user;
     private String nombre;
     private String correo;
-    private String clave;
+    private String contrasena;
     private boolean logeado = false;
     private String msg;
     /**
@@ -68,7 +68,7 @@ public class LoginBean implements Serializable {
              }
          }
          
-          if (correo != null  && clave != null  && clave.equals(password)) {
+          if (correo != null  && contrasena != null  && contrasena.equals(password)) {
             logeado = true;
                 msg = "Bienvenid@ " + nombre;
              
@@ -97,12 +97,15 @@ public class LoginBean implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getClave() {
-        return clave;
+ 
+
+
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getMsg() {
@@ -119,6 +122,14 @@ public class LoginBean implements Serializable {
 
     public void setLogeado(boolean logeado) {
         this.logeado = logeado;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     
     
