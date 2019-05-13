@@ -15,9 +15,9 @@
                         <h:outputText value="Codigo de Clase:"/>
                         <h:outputText value="#{claseController.selected.codClase}" title="#{bundle.ViewClaseTitle_codClase}"/>
                         <h:outputText value="Bloque:"/>
-                        <h:outputText value="#{claseController.selected.bloquecodbloque}" title="#{bundle.ViewClaseTitle_bloquecodbloque}"/>
+                        <h:outputText value="#{claseController.selected.bloquecodbloque.toString()}" title="#{bundle.ViewClaseTitle_bloquecodbloque}"/>
                         <h:outputText value="Sección:"/>
-                        <h:outputText value="#{claseController.selected.seccioncodseccion}" title="#{bundle.ViewClaseTitle_seccioncodseccion}"/>
+                        <h:outputText value="#{claseController.selected.seccioncodseccion.seccion}" title="#{bundle.ViewClaseTitle_seccioncodseccion}"/>
                     </p:panelGrid>
                     <p:commandButton value="Cerrar" onclick="ClaseViewDialog.hide()"/>
                 </h:panelGroup>
