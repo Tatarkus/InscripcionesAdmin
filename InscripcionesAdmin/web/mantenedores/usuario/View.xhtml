@@ -25,9 +25,9 @@
                         <h:outputText value="#{bundle.ViewUsuarioLabel_correo}"/>
                         <h:outputText value="#{usuarioController.selected.correo}" title="#{bundle.ViewUsuarioTitle_correo}"/>
                         <h:outputText value="Malla:"/>
-                        <h:outputText value="#{usuarioController.selected.mallacodmalla}" title="#{bundle.ViewUsuarioTitle_mallacodmalla}"/>
+                        <h:outputText value="#{usuarioController.selected.mallacodmalla.nomMalla}" title="#{bundle.ViewUsuarioTitle_mallacodmalla}"/>
                         <h:outputText value="Tipo de Usuario:"/>
-                        <h:outputText value="#{usuarioController.selected.tipousuario}" title="#{bundle.ViewUsuarioTitle_tipousuario}"/>
+                        <h:outputText value="#{usuarioController.selected.tipousuario.tipo}" title="#{bundle.ViewUsuarioTitle_tipousuario}"/>
                     </p:panelGrid>
                     <p:commandButton value="Cerrar" onclick="UsuarioViewDialog.hide()"/>
                 </h:panelGroup>
