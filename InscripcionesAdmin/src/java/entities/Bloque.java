@@ -6,6 +6,8 @@
 package entities;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -55,8 +57,10 @@ public class Bloque implements Serializable {
     private Date horaTermino;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bloquecodbloque")
     private Collection<Clase> claseCollection;
-
-    public Bloque() {
+    
+    
+    public Bloque() {        
+        
     }
 
     public Bloque(Integer codBloque) {
@@ -67,6 +71,7 @@ public class Bloque implements Serializable {
         this.codBloque = codBloque;
         this.horaInicio = horaInicio;
         this.horaTermino = horaTermino;
+        
     }
 
     public Integer getCodBloque() {
@@ -77,16 +82,18 @@ public class Bloque implements Serializable {
         this.codBloque = codBloque;
     }
 
-    public Date getHoraInicio() {
-        return horaInicio;
+    public String getHoraInicio() {   
+        SimpleDateFormat dt = new SimpleDateFormat("HH:mm");
+        return dt.format(horaInicio);
     }
 
     public void setHoraInicio(Date horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public Date getHoraTermino() {
-        return horaTermino;
+    public String getHoraTermino() {
+        SimpleDateFormat dt = new SimpleDateFormat("HH:mm");
+        return dt.format(horaTermino);
     }
 
     public void setHoraTermino(Date horaTermino) {
@@ -124,7 +131,8 @@ public class Bloque implements Serializable {
 
     @Override
     public String toString() {
-        return horaInicio+" - "+horaTermino;
+         SimpleDateFormat dt = new SimpleDateFormat("HH:mm");
+        return dt.format(horaInicio)+" - "+dt.format(horaTermino);
     }
     
 }

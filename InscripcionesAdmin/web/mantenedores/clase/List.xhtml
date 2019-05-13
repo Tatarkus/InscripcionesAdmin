@@ -37,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="Bloque"/>
                             </f:facet>
-                            <h:outputText value="#{item.bloquecodbloque}"/>
+                            <h:outputText value="#{item.bloquecodbloque.toString()}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="Sección"/>
                             </f:facet>
-                            <h:outputText value="#{item.seccioncodseccion}"/>
+                            <h:outputText value="#{item.seccioncodseccion.seccion}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{claseController.prepareCreate}" update=":ClaseCreateForm" oncomplete="PF('ClaseCreateDialog').show()"/>
