@@ -43,7 +43,7 @@
                             <f:facet name="header">
                                 <h:outputText value="Carrera"/>
                             </f:facet>
-                            <h:outputText value="#{item.carreracodcarrera}"/>
+                            <h:outputText value="#{item.carreracodcarrera.nomCarrera}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{mallaController.prepareCreate}" update=":MallaCreateForm" oncomplete="PF('MallaCreateDialog').show()"/>
