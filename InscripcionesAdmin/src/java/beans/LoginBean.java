@@ -31,9 +31,11 @@ public class LoginBean implements Serializable {
 
     public String logout(){
         
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         logeado = false;
+        
              try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("denegado.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/InscripcionesAdmin/faces/login.xhtml");
             } catch (IOException ex) {
                 Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -46,7 +48,7 @@ public class LoginBean implements Serializable {
         if(logeado != true){
             try {
                
-                FacesContext.getCurrentInstance().getExternalContext().redirect("denegado.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/InscripcionesAdmin/faces/denegado.xhtml");
             } catch (IOException ex) {
                 Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -75,7 +77,7 @@ public class LoginBean implements Serializable {
                      try {
                 //return "denegado.xhtml";
                 
-                FacesContext.getCurrentInstance().getExternalContext().redirect("faces/index.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/InscripcionesAdmin/faces/index.xhtml");
             } catch (IOException ex) {
                 Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
             }

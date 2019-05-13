@@ -9,6 +9,7 @@
         <title><ui:insert name="title">Default Title</ui:insert></title>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
+        ${loginBean.permitido()}
     </h:head>
 
     <h:body>
@@ -17,6 +18,7 @@
 
         <p:layout fullPage="true">
             <p:layoutUnit position="north" size="65" header="Administración de inscripciones">
+                
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="Inicio" outcome="/index" icon="ui-icon-home"/>
@@ -29,7 +31,7 @@
                             <p:menuitem value="TipoUsuario" outcome="/mantenedores/tipoUsuario/List.xhtml" />
                             <p:menuitem value="Usuario" outcome="/mantenedores/usuario/List.xhtml" />
                         </p:submenu>
-                        <p:menuitem value="Cerrar Sesión"  action="#{loginBean.logout()}" />
+                        <p:menuitem style="color: red"  value="Cerrar Sesión"  action="#{loginBean.logout()}" />
                       
                     </p:menubar>
                 </h:form>

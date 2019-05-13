@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/template.xhtml">
    
         <ui:define name="title">
             <h:outputText value="Lista de Mantenedores"></h:outputText>
+            
             <h:outputStylesheet library="css" name="bootstrap.css"/>
         </ui:define>
          
         <ui:define name="body">
-             ${loginBean.permitido()}
+             
+             <p:panel style="width:50%">
             <ul class="list-group">
                 <li class="list-group-item-action list-group-item d-flex justify-content-between align-items-center">
             <h:link outcome="/mantenedores/bloque/List" value="Bloques"/>
@@ -40,6 +43,7 @@
      
                  
             </ul>
+                 </p:panel>
         
         </ui:define>
 

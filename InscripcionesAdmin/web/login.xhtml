@@ -16,21 +16,24 @@
             <p:growl id="mensajes" showDetail="true" life="2000" />
              <h:form class="d-flex justify-content-center pt-5"> 
                <p:panel header="Login" style="width:600px" >
-                 <h:panelGrid columns="2" cellpadding="5" class="d-flex justify-content-center ">
+                 <h:panelGrid style="display: flex" columns="2" cellpadding="5" class="d-flex justify-content-center ">
                    <h:outputLabel for="correo" value="Correo Electronico:" />                   
                    <p:inputText value="#{loginBean.correo}" id="correo"
                       required="true" label="correo" />
                    <h:outputLabel for="contrasena" value="Contraseña:" />
                    <p:password value="#{loginBean.contrasena}" id="contrasena" required="true"
                       label="contrasena" />
-
-                     <p:commandButton id="loginButton" value="Login"
+                   <p:commandButton id="loginButton" value="Login" style="width:100%; margin-left:80px"
                         action="#{loginBean.login()}" />
-                     <h:outputLabel></h:outputLabel>
+                   
+                     
 
                  </h:panelGrid>
+                   
                </p:panel>
+                 
              </h:form>
+            
         </ui:define>
 
 </ui:composition>
