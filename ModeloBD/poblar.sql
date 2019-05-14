@@ -342,3 +342,8 @@ INSERT INTO InscripcionesAdmin.Usuario (run, dv, `Malla_cod_malla`, nombres, ape
 	VALUES (20123122, '5', 2, 'Carlos Max', 'Mellado', '123', 'carlos@correo.com', 3, 4);
 INSERT INTO InscripcionesAdmin.Usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_Usuario`, semestre) 
 	VALUES (20445121, '9', 1, 'Tomás', 'Farías', '123', 'tomas@mail.com', 3, 5);
+
+INSERT INTO InscripcionesAdmin.Horario (cod_horario, Usuario_run, Clase_cod_clase) 
+	VALUES (1, 17305233, 20);
+INSERT INTO InscripcionesAdmin.Horario (cod_horario, Usuario_run, Clase_cod_clase) 
+	VALUES (2, 17305233, 13);

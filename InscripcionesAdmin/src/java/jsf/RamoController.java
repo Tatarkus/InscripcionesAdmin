@@ -109,7 +109,7 @@ public class RamoController implements Serializable {
         }
     }
 
-    public Ramo getRamo(java.lang.Integer id) {
+    public Ramo getRamo(java.lang.String id) {
         return getFacade().find(id);
     }
 
@@ -134,13 +134,13 @@ public class RamoController implements Serializable {
             return controller.getRamo(getKey(value));
         }
 
-        java.lang.Integer getKey(String value) {
-            java.lang.Integer key;
-            key = Integer.valueOf(value);
+        java.lang.String getKey(String value) {
+            java.lang.String key;
+            key = value;
             return key;
         }
 
-        String getStringKey(java.lang.Integer value) {
+        String getStringKey(java.lang.String value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value);
             return sb.toString();
@@ -153,7 +153,7 @@ public class RamoController implements Serializable {
             }
             if (object instanceof Ramo) {
                 Ramo o = (Ramo) object;
-                return (o.getSigla());
+                return getStringKey(o.getSigla());
             } else {
                 Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), Ramo.class.getName()});
                 return null;

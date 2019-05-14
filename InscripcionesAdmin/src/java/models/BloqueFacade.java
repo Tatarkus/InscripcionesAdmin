@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Thomas
+ * @author tarkus
  */
 @Stateless
 public class BloqueFacade extends AbstractFacade<Bloque> {

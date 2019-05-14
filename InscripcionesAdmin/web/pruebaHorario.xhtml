@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/templatelog.xhtml">
+   
+        <ui:define name="title">
+            <h:outputText value="Lista de Mantenedores"></h:outputText>
+            <h:outputStylesheet library="css" name="bootstrap.css"/>
+        </ui:define>
+        
+        <ui:define name="body" >
+           #{horarioBean.obtenerHorario(17305233)}
+           <h:dataTable value="#{horarioBean.clases }" var="dia" border="1">
+               <ui:repeat value="#{dia}" var="clase">
+                   <h:outputText value="#{clase}"/>
+               </ui:repeat>
+            </h:dataTable>
+            
+        </ui:define>
+
+</ui:composition>
+
+
+
+
+
+
+</html>
+

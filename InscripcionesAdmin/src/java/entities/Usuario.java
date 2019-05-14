@@ -6,7 +6,9 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,10 +16,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -35,6 +39,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Usuario.findByPassword", query = "SELECT u FROM Usuario u WHERE u.password = :password")
     , @NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo")})
 public class Usuario implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "semestre")
+    private int semestre;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuariorun")
+    private Collection<Horario> horarioCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -177,6 +188,23 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "entities.Usuario[ run=" + run + " ]";
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
+    @XmlTransient
+    public Collection<Horario> getHorarioCollection() {
+        return horarioCollection;
+    }
+
+    public void setHorarioCollection(Collection<Horario> horarioCollection) {
+        this.horarioCollection = horarioCollection;
     }
     
 }

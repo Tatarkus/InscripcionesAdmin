@@ -6,7 +6,9 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,9 +16,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -29,6 +34,19 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Clase.findAll", query = "SELECT c FROM Clase c")
     , @NamedQuery(name = "Clase.findByCodClase", query = "SELECT c FROM Clase c WHERE c.codClase = :codClase")})
 public class Clase implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "Dia")
+    private String dia;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "Sala")
+    private String sala;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clasecodclase")
+    private Collection<Horario> horarioCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -97,6 +115,31 @@ public class Clase implements Serializable {
     @Override
     public String toString() {
         return "entities.Clase[ codClase=" + codClase + " ]";
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    @XmlTransient
+    public Collection<Horario> getHorarioCollection() {
+        return horarioCollection;
+    }
+
+    public void setHorarioCollection(Collection<Horario> horarioCollection) {
+        this.horarioCollection = horarioCollection;
     }
     
 }
