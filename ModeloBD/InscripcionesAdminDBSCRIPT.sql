@@ -160,6 +160,26 @@ CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Clase` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`Horario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`horario` (
+  `cod_horario` INT NOT NULL,
+  `Usuario_run` INT NOT NULL,
+  `Clase_cod_clase` INT NOT NULL,
+  PRIMARY KEY (`cod_horario`),
+  CONSTRAINT `fk_Horario_Usuario1`
+    FOREIGN KEY (`Usuario_run`)
+    REFERENCES `InscripcionesAdmin`.`Usuario` (`run`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Horario_Clase1`
+    FOREIGN KEY (`Clase_cod_clase`)
+    REFERENCES `InscripcionesAdmin`.`Clase` (`cod_clase`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

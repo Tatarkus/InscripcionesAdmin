@@ -30,6 +30,8 @@
                         <h:outputText value="#{usuarioController.selected.tipousuario.tipo}" title="#{bundle.ViewUsuarioTitle_tipousuario}"/>
                     </p:panelGrid>
                     <p:commandButton value="Cerrar" onclick="UsuarioViewDialog.hide()"/>
+                    <p:commandButton value="Ver Horario" onclick="UsuarioViewDialog.hide()"/>
+                    <p:commandButton id="inscribirButton"   icon="ui-icon-pencil" value="Inscribir" update=":InscribirForm" oncomplete="PF('UsuarioInscribir').show()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
