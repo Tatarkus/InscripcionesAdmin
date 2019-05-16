@@ -4,17 +4,31 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition>
+        
+        <p:dialog id="UsuarioHorarioDialog" widgetVar="UsuarioHorarioDialog" modal="true" resizable="false" appendTo="@(body)" header="Horario">
+            
 
-        <p:dialog id="UsuarioHorario" widgetVar="UsuarioHorario" modal="true" resizable="false" appendTo="@(body)" header="Horario">
-            <h:form id="UsuarioHorarioForm">
+           <h:form id="UsuarioHorarioForm">  
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="6" rendered="#{usuarioController.selected != null}">
-                        
+                    #{horarioBean.obtenerHorario(usuarioController.selected.run)}
+                    <p:panelGrid columns="6" rendered="#{usuarioController.selected.run != null}">
+                         <h:outputText value="Lunes" title=""/>
+                         <h:outputText value="Martes" title=""/>
+                         <h:outputText value="Miercoles" title=""/>
+                         <h:outputText value="Jueves" title=""/>
+                         <h:outputText value="Viernes" title=""/>
+                         <h:outputText value="Sabado" title=""/>
+                         <c:forEach items="${horarioBean.clases}" var="item">
+                            <h:outputText value="${item}"/>
+                        </c:forEach>
+
+                    
                     </p:panelGrid>
-                    <p:commandButton value="Cerrar" onclick="UsuarioViewDialog.hide()"/>
+      
                 </h:panelGroup>
             </h:form>
         </p:dialog>

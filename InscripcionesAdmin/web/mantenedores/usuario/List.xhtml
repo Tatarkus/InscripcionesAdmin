@@ -79,7 +79,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{usuarioController.prepareCreate}" update=":UsuarioCreateForm" oncomplete="PF('UsuarioCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver" update=":UsuarioViewForm" oncomplete="PF('UsuarioViewDialog').show()" disabled="#{empty usuarioController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":UsuarioEditForm" oncomplete="PF('UsuarioEditDialog').show()" disabled="#{empty usuarioController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{usuarioController.destroy}" update=":growl,datalist" disabled="#{empty usuarioController.selected}"/>
+                        <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{usuarioController.destroy}" update=":growl,datalist" disabled="#{empty usuarioController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
@@ -89,6 +89,7 @@
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>
             <ui:include src="usuario_ramo.xhtml"/>
+            <ui:include src="usuario_horario.xhtml"/>
         </ui:define>
     </ui:composition>
 

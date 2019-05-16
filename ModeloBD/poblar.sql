@@ -343,7 +343,48 @@ INSERT INTO InscripcionesAdmin.Usuario (run, dv, `Malla_cod_malla`, nombres, ape
 INSERT INTO InscripcionesAdmin.Usuario (run, dv, `Malla_cod_malla`, nombres, apellidos, password, correo, `Tipo_Usuario`, semestre) 
 	VALUES (20445121, '9', 1, 'Tomás', 'Farías', '123', 'tomas@mail.com', 3, 5);
 
-INSERT INTO InscripcionesAdmin.Horario (cod_horario, Usuario_run, Clase_cod_clase) 
-	VALUES (1, 17305233, 20);
-INSERT INTO InscripcionesAdmin.Horario (cod_horario, Usuario_run, Clase_cod_clase) 
-	VALUES (2, 17305233, 13);
+
+
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (1, 17305233, 22);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (2, 17305233, 23);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (3, 17305233, 24);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (4, 17305233, 20);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (5, 17305233, 21);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (6, 17305233, 17);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (6, 17305233, 18);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (6, 17305233, 19);
+
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (7, 17305233, 13);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (8, 17305233, 14);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (9, 17305233, 15);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (10, 17305233, 16);
+
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (11, 17305233, 11);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (12, 17305233, 12);
+
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (3, 17305233, 18);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (4, 17305233, 19);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (6, 17305233, 18);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (6, 17305233, 19);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (7, 17305233, 18);
+INSERT INTO inscripcionesadmin.horario (cod_horario, `Usuario_run`, `Clase_cod_clase`) 
+	VALUES (8, 17305233, 19);
