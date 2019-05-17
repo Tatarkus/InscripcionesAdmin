@@ -15,29 +15,28 @@
         
         
         <ui:define name="body" >
-            #{inscribirBean.ObtenerOferta(17305233)}
+            
             <h:form id="UsuarioCreateForm">
+                
                     <h:panelGroup id="display">
+                        #{inscribirBean.ObtenerOferta(17305233)}
                         <p:panelGrid columns="2" >
-                            <p:selectOneMenu id="seleccionramo" value="#{inscribirBean.cod_ramo}"
-                                             onchange="submit()"
-                                             valueChangeListener="#{inscribirBean.obtenerSecciones}"
-                                             
-                                            
+                            
+                            <p:selectOneMenu id="oferta" value="#{inscribirBean.cod_ramo}"
                                               >
+                                <f:ajax listener = "#{inscribirBean.obtenerSecciones}" render="secciones" />
+                                
                                 <f:selectItem itemLabel="Seleccione un ramo" itemValue=""/>
                                 <f:selectItems value="#{inscribirBean.oferta}"
                                        var="ramoItem"
                                        itemValue="#{ramoItem.sigla}"
                                        itemLabel="#{ramoItem.nomRamo}"
-                                       
-                                       
-                                       
+                                     
                                        />
                                 
                             </p:selectOneMenu>
                             
-                            <p:selectOneMenu id="seleccionseccion" value="#{inscribirBean.cod_seccion}" 
+                            <p:selectOneMenu id="secciones" value="#{inscribirBean.cod_seccion}" 
                                              >
                                 <f:selectItems value="#{inscribirBean.secciones}"
                                        var="seccionItem"
@@ -46,9 +45,9 @@
                                        itemValue="#{seccionItem.codSeccion}"
                                        itemLabel="#{seccionItem.seccion}"/>
                             </p:selectOneMenu>
-                             </p:panelGrid>
+                        </p:panelGrid>
                         <p:commandButton action="#{inscribirBean.inscribir()}" value="Crear" />
-                         <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
+                        <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
                         
                     </h:panelGroup>
             </h:form>

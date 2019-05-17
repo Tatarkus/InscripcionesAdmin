@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
 import models.ClaseFacade;
 import models.HorarioFacade;
@@ -56,23 +57,19 @@ public class InscribirBean implements Serializable {
         if(usr != null)
         {
             oferta = usr.getMallacodmalla().getRamoCollection();
-            
-            for (Ramo ramo1 : oferta) {
-                System.out.println(ramo1.getNomRamo());
 
-            }
         }
         
     }
     
-    public void obtenerSecciones(ValueChangeEvent e)
+    public void obtenerSecciones(AjaxBehaviorEvent e)
     {
-        //System.out.println(e.getNewValue());
-        //System.out.println(e.getOldValue());
-               if(e.getNewValue() != null)
+        System.out.println("listener llamado con ramo " + cod_ramo);
+        
+               if(cod_ramo != null)
                {
                    
-                    r = ramoF.find(e.getNewValue());
+                    r = ramoF.find(cod_ramo);
                     if(r != null)
                     {
                         secciones = r.getSeccionCollection();
@@ -87,17 +84,22 @@ public class InscribirBean implements Serializable {
     public void inscribir()
     {
                 Horario horario = new Horario();
+                System.out.println("Se va a inscribir un horario para:");
+                System.out.println(usr.getNombres() + " " + usr.getApellidos());
+                
+                
                 Seccion s1 = new Seccion();
                 s1 = seccionF.find(cod_seccion);
+                System.out.println("Seccion: " + s1.getCodSeccion());
+                
                 Collection<Clase> lista = new ArrayList<>();
                 lista = claseF.findAll();
                 
 
                 for (Clase c : lista ) {
-                    System.out.println(c.getSeccioncodseccion().getSeccion());
-                    
                     if(c.getSeccioncodseccion().getCodSeccion() == s1.getCodSeccion())
                     {
+                    System.out.println("Se encontro una clase");
                     horario.setClasecodclase(c);
                     horario.setUsuariorun(usr);
                     horario.setCodHorario(horarioF.count());

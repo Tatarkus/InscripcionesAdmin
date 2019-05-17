@@ -15,11 +15,8 @@
                         #{inscribirBean.ObtenerOferta(usuarioController.selected.run)}
                         <p:panelGrid columns="2" rendered="#{usuarioController.selected.run != null}" >
                             <p:selectOneMenu id="seleccionramo" value="#{inscribirBean.cod_ramo}"
-                                             onchange="submit()"
-                                             valueChangeListener="#{inscribirBean.obtenerSecciones}"
-                                             
-                                            
                                               >
+                                <f:ajax listener = "#{inscribirBean.obtenerSecciones}" render="secciones" />
                                 <f:selectItem itemLabel="Seleccione un ramo" itemValue=""/>
                                 <f:selectItems value="#{inscribirBean.oferta}"
                                        var="ramoItem"
@@ -32,7 +29,7 @@
                                 
                             </p:selectOneMenu>
                             
-                            <p:selectOneMenu id="seleccionseccion" value="#{inscribirBean.cod_seccion}" 
+                            <p:selectOneMenu id="secciones" value="#{inscribirBean.cod_seccion}" 
                                              >
                                 <f:selectItems value="#{inscribirBean.secciones}"
                                        var="seccionItem"
