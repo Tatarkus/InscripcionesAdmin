@@ -48,7 +48,7 @@ public class Malla implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "nom_malla")
     private String nomMalla;
-    @JoinTable(name = "mallaramo", joinColumns = {
+    @JoinTable(name = "MallaRamo", joinColumns = {
         @JoinColumn(name = "Malla_cod_malla", referencedColumnName = "cod_malla")}, inverseJoinColumns = {
         @JoinColumn(name = "Ramo_sigla", referencedColumnName = "sigla")})
     @ManyToMany
