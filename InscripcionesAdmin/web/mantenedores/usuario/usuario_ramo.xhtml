@@ -9,24 +9,43 @@
     <ui:composition>
 
         <p:dialog id="UsuarioInscribir" widgetVar="UsuarioInscribir" modal="true" resizable="false" appendTo="@(body)" header="Inscribir Asignatura">
+           
             <h:form id="InscribirForm">
-                <h:panelGroup id="display">
-                    <p:panelGrid columns="6">
-                        <p:outputLabel value="Ramo" for="ramosigla" />
-                        <p:selectOneMenu id="ramosigla" value="BPM" >
-                            <f:selectItems value="#{ramoController.itemsAvailableSelectOne}"
-                                           var="ramosiglaItem"
-                                           itemValue="#{ramosiglaItem}"/>
-                        </p:selectOneMenu>
-                        <p:outputLabel value="Sección" for="seccioncodseccion" />
-                        <p:selectOneMenu id="seccioncodseccion" value="001D" >
-                            <f:selectItems value="#{seccionController.itemsAvailableSelectOne}"
-                                           var="seccioncodseccionItem"
-                                           itemValue="#{seccioncodseccionItem}"/>
-                        </p:selectOneMenu>
-                    </p:panelGrid>
-                    <p:commandButton value="Inscribir" onclick="UsuarioViewDialog.hide()"/>
-                </h:panelGroup>
+                    <h:panelGroup id="display">
+                        #{inscribirBean.ObtenerOferta(usuarioController.selected.run)}
+                        <p:panelGrid columns="2" rendered="#{usuarioController.selected.run != null}" >
+                            <p:selectOneMenu id="seleccionramo" value="#{inscribirBean.cod_ramo}"
+                                             onchange="submit()"
+                                             valueChangeListener="#{inscribirBean.obtenerSecciones}"
+                                             
+                                            
+                                              >
+                                <f:selectItem itemLabel="Seleccione un ramo" itemValue=""/>
+                                <f:selectItems value="#{inscribirBean.oferta}"
+                                       var="ramoItem"
+                                       itemValue="#{ramoItem.sigla}"
+                                       itemLabel="#{ramoItem.nomRamo}"
+                                       
+                                       
+                                       
+                                       />
+                                
+                            </p:selectOneMenu>
+                            
+                            <p:selectOneMenu id="seleccionseccion" value="#{inscribirBean.cod_seccion}" 
+                                             >
+                                <f:selectItems value="#{inscribirBean.secciones}"
+                                       var="seccionItem"
+                                       itemDisabled="#{ inscribirBean.cod_ramo == null }"
+                                       
+                                       itemValue="#{seccionItem.codSeccion}"
+                                       itemLabel="#{seccionItem.seccion}"/>
+                            </p:selectOneMenu>
+                             </p:panelGrid>
+                        <p:commandButton actionListener="#{inscribirBean.inscribir()}" value="Crear" />
+                         <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
+                        
+                    </h:panelGroup>
             </h:form>
         </p:dialog>
 

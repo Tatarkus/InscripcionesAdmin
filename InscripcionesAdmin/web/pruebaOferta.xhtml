@@ -20,21 +20,36 @@
                     <h:panelGroup id="display">
                         <p:panelGrid columns="2" >
                             <p:selectOneMenu id="seleccionramo" value="#{inscribirBean.cod_ramo}"
-                                            >
+                                             onchange="submit()"
+                                             valueChangeListener="#{inscribirBean.obtenerSecciones}"
+                                             
+                                            
+                                              >
+                                <f:selectItem itemLabel="Seleccione un ramo" itemValue=""/>
                                 <f:selectItems value="#{inscribirBean.oferta}"
                                        var="ramoItem"
                                        itemValue="#{ramoItem.sigla}"
-                                       itemLabel="#{ramoItem.nomRamo}"/>
+                                       itemLabel="#{ramoItem.nomRamo}"
+                                       
+                                       
+                                       
+                                       />
+                                
                             </p:selectOneMenu>
                             
                             <p:selectOneMenu id="seleccionseccion" value="#{inscribirBean.cod_seccion}" 
-                                              >
+                                             >
                                 <f:selectItems value="#{inscribirBean.secciones}"
                                        var="seccionItem"
+                                       itemDisabled="#{ inscribirBean.cod_ramo == null }"
+                                       
                                        itemValue="#{seccionItem.codSeccion}"
                                        itemLabel="#{seccionItem.seccion}"/>
                             </p:selectOneMenu>
-                        </p:panelGrid>
+                             </p:panelGrid>
+                        <p:commandButton action="#{inscribirBean.inscribir()}" value="Crear" />
+                         <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
+                        
                     </h:panelGroup>
             </h:form>
     

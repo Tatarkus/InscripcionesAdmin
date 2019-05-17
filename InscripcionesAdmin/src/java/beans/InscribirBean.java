@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ValueChangeEvent;
 import models.ClaseFacade;
 import models.HorarioFacade;
 import models.MallaFacade;
@@ -58,44 +59,51 @@ public class InscribirBean implements Serializable {
             
             for (Ramo ramo1 : oferta) {
                 System.out.println(ramo1.getNomRamo());
-                secciones = ramo1.getSeccionCollection();
-                for (Seccion s : secciones) {
-                    System.out.println(s.getCodSeccion());
-                }
-                
+
             }
         }
         
     }
     
-    public void obtenerSecciones()
+    public void obtenerSecciones(ValueChangeEvent e)
     {
-        
-                System.out.println(cod_ramo);
-                System.out.println(cod_ramo);
-                System.out.println(cod_ramo);
-                System.out.println(cod_ramo);
-                System.out.println(cod_ramo);
-                r = ramoF.find(cod_ramo);
-                if(r != null)
-                {
-                secciones = r.getSeccionCollection();
-                for (Seccion s : secciones) {
-                    System.out.println(s.getCodSeccion());
-                }
-                }
+        //System.out.println(e.getNewValue());
+        //System.out.println(e.getOldValue());
+               if(e.getNewValue() != null)
+               {
+                   
+                    r = ramoF.find(e.getNewValue());
+                    if(r != null)
+                    {
+                        secciones = r.getSeccionCollection();
+                        cod_ramo = r.getSigla();
+                        
+                    }
+               }else
+                   secciones.clear();
 
     }
     
     public void inscribir()
     {
                 Horario horario = new Horario();
-
+                Seccion s1 = new Seccion();
+                s1 = seccionF.find(cod_seccion);
+                Collection<Clase> lista = new ArrayList<>();
+                lista = claseF.findAll();
                 
-                for (Clase c :  seccionF.find(cod_seccion).getClaseCollection() ) {
+
+                for (Clase c : lista ) {
+                    System.out.println(c.getSeccioncodseccion().getSeccion());
+                    
+                    if(c.getSeccioncodseccion().getCodSeccion() == s1.getCodSeccion())
+                    {
                     horario.setClasecodclase(c);
                     horario.setUsuariorun(usr);
                     horario.setCodHorario(horarioF.count());
+                    horarioF.create(horario);
+
+                   }
                 }
                
                 
