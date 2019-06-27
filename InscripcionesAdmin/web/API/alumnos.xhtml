@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/template.xhtml">
+   
+        <ui:define name="title">
+            <h:outputText value="Lista de Mantenedores"></h:outputText>
+             
+        </ui:define>
+         
+        <ui:define name="body">
+            <h:outputScript library = "js" name = "websocket.js" />
+             <h:form id="UsuarioViewForm" prependId="false" >
+                <h:panelGrid id="mi_tabla" columns="7" styleClass="table-secondary" border="1" cellpadding="5" cellspacing="1">
+                        <f:facet name = "header">
+                            <h:outputText value = "Usuarios" style = "display:block; text-align:center"/>
+                        </f:facet>
+                        <h:outputText value="n°"/>
+                        <h:outputText value="Nombre"/>
+                        <h:outputText value="Apellido Paterno"/>
+                        <h:outputText value="Apellido Materno"/>
+                        <h:outputText value="Correo"/>
+                        <h:outputText value="Sexo"/>
+                        <h:outputText value="Comuna"/>
+                        <f:facet name = "footer">
+                            <h:panelGroup style = "display:block; text-align:center">
+                                <h:commandButton type="button" id = "cargar" value = "Cargar" onclick="doSend('cargar')"/>
+                                
+                            </h:panelGroup>
+                        </f:facet>
+                    </h:panelGrid>
+            </h:form>
+        </ui:define>
+
+</ui:composition>
+
+
+
+
+
+
+</html>
+
+
