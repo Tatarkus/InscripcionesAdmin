@@ -47,18 +47,22 @@ public class HorarioBean implements Serializable{
         
         String[][] sinoptico  = new String[14][6];
         String data;
-        int dia=0, bloque;
+        int dia=0, bloque=0;
         
         for (int i = 0; i <= 13 ; i++) {
-            Arrays.fill( sinoptico[i],"-");
+            Arrays.fill( sinoptico[i],"---");
         }
         
         System.out.println("Buscando horario del run: "+run);
         
         List<Horario> horarioUsuario = horario.findAll();
         for (Horario horario1 : horarioUsuario) {
-            System.out.println("Encontrado horario");
             if (horario1.getUsuariorun().getRun()==run) {
+                                System.out.println("id: "+ horario1.getCodHorario());
+
+                System.out.println("Encontrada una clase de: "+ horario1.getClasecodclase().getSeccioncodseccion().getRamosigla().getNomRamo());
+                System.out.println("Dia: "+horario1.getClasecodclase().getDia() + " Bloque: "+ horario1.getClasecodclase().getBloquecodbloque().getCodBloque()); 
+
                 data=horario1.getClasecodclase().getSeccioncodseccion().getRamosigla().getSigla();
                 data+="\n";
                 data+=horario1.getClasecodclase().getSala();
@@ -83,11 +87,10 @@ public class HorarioBean implements Serializable{
                         dia = 5;
                         break;
                 }
-                bloque=horario1.getClasecodclase().getBloquecodbloque().getCodBloque()-1;
+                bloque=horario1.getClasecodclase().getBloquecodbloque().getCodBloque()-1 ;
                
-                List<String> clases_dia = new ArrayList<>();
+                //List<String> clases_dia = new ArrayList<>();
                 sinoptico[bloque][dia] = data;
-                System.out.println("Encontrada clase: "+data+" el dia "+horario1.getClasecodclase().getDia() + " en el bloque "+bloque); 
                 
             }
 

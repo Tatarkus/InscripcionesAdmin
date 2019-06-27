@@ -12,11 +12,11 @@
            
             <h:form id="InscribirForm">
                     <h:panelGroup id="display">
-                        #{inscribirBean.ObtenerOferta(usuarioController.selected.run)}
+                                                #{inscribirBean.ObtenerOferta(usuarioController.selected.run)}
                         <p:panelGrid columns="2" rendered="#{usuarioController.selected.run != null}" >
                             <p:selectOneMenu id="seleccionramo" value="#{inscribirBean.cod_ramo}"
                                               >
-                                <f:ajax listener = "#{inscribirBean.obtenerSecciones}" render="secciones" />
+                                <f:ajax listener="#{inscribirBean.obtenerSecciones}" render="secciones" />
                                 <f:selectItem itemLabel="Seleccione un ramo" itemValue=""/>
                                 <f:selectItems value="#{inscribirBean.oferta}"
                                        var="ramoItem"
@@ -33,13 +33,14 @@
                                              >
                                 <f:selectItems value="#{inscribirBean.secciones}"
                                        var="seccionItem"
-                                       itemDisabled="#{ inscribirBean.cod_ramo == null }"
+                                       itemDisabled="#{inscribirBean.cod_ramo == null }"
                                        
                                        itemValue="#{seccionItem.codSeccion}"
-                                       itemLabel="#{seccionItem.seccion}"/>
+                                       itemLabel="#{seccionItem}"/>
                             </p:selectOneMenu>
                              </p:panelGrid>
-                        <p:commandButton actionListener="#{inscribirBean.inscribir()}" value="Crear" />
+                        
+                        <p:commandButton actionListener="#{inscribirBean.inscribir()}" value="Crear" update="display,:UsuarioListForm:datalist,:growl" onclick="UsuarioCreateDialog.hide()" oncomplete="handleSubmit(args,'HorarioCreateDialog');" />
                          <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
                         
                     </h:panelGroup>

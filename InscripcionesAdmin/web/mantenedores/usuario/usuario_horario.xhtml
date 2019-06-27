@@ -15,15 +15,23 @@
            <h:form id="UsuarioHorarioForm">  
                 <h:panelGroup id="display">
                     #{horarioBean.obtenerHorario(usuarioController.selected.run)}
-                    <p:panelGrid columns="6" rendered="#{usuarioController.selected.run != null}">
+                    <p:panelGrid columns="7" rendered="#{usuarioController.selected.run != null}">
+                        <h:outputText value="Bloque" title=""/>
                          <h:outputText value="Lunes" title=""/>
                          <h:outputText value="Martes" title=""/>
                          <h:outputText value="Miercoles" title=""/>
                          <h:outputText value="Jueves" title=""/>
                          <h:outputText value="Viernes" title=""/>
                          <h:outputText value="Sabado" title=""/>
-                         <c:forEach items="${horarioBean.clases}" var="item">
-                            <h:outputText value="${item}"/>
+                         <c:set var = "contador" value = "${0}"/>
+                         <c:forEach items="${horarioBean.clases}" var="item" varStatus="loop">
+                              <c:if test = "${loop.count % 6 ==1}">
+                                  <c:set var = "bloque" value = "${bloqueController.items.get(contador)}"/>
+                                  <h:outputText value="#{bloque}"/>
+                                  <c:set var = "contador"  value = "${contador+1}"/>
+
+                             </c:if>
+                            <h:outputText value="#{item}"/>
                         </c:forEach>
 
                     

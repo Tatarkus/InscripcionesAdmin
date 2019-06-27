@@ -1,11 +1,14 @@
 package jsf;
 
+import entities.Malla;
 import entities.Ramo;
 import jsf.util.JsfUtil;
 import jsf.util.JsfUtil.PersistAction;
 import models.RamoFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -73,7 +76,13 @@ public class RamoController implements Serializable {
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
+    
+     public Collection<Ramo> getOferta(Malla malla)
+    {
+       return malla.getRamoCollection();
 
+
+    }
     public List<Ramo> getItems() {
         if (items == null) {
             items = getFacade().findAll();

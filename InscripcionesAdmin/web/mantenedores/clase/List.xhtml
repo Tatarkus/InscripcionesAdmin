@@ -33,11 +33,23 @@
                             </f:facet>
                             <h:outputText value="#{item.codClase}"/>
                         </p:column>
+                         <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Dia"/>
+                            </f:facet>
+                             <h:outputText value="#{item.dia}"/>
+                        </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="Bloque"/>
                             </f:facet>
                             <h:outputText value="#{item.bloquecodbloque.toString()}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ramo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.seccioncodseccion.ramosigla.nomRamo}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

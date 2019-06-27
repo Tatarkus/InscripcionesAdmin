@@ -20,12 +20,37 @@
                                            var="bloquecodbloqueItem"
                                            itemValue="#{bloquecodbloqueItem}"/>
                         </p:selectOneMenu>
+                        <p:outputLabel value="Bloque:" />
+                        <p:selectOneMenu id="clasedia" value="#{claseController.selected.dia}" required="true">
+                            <f:selectItem itemLabel="Lunes" itemValue="Lunes"/>
+                            <f:selectItem itemLabel="Martes" itemValue="Martes"/>
+                            <f:selectItem itemLabel="Miercoles" itemValue="Miercoles"/>
+                            <f:selectItem itemLabel="Jueves" itemValue="Jueves"/>
+                            <f:selectItem itemLabel="Viernes" itemValue="Viernes"/>
+                            <f:selectItem itemLabel="Sabado" itemValue="Sabado"/>
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="Sala:" />
+                        <p:inputText id="codSala" value="#{claseController.selected.sala}" required="true"/>
+
+                        <p:outputLabel value="Ramo:" for="ramosigla" />
+                        <p:selectOneMenu id="ramosigla" value="#{seccionController.sigla}" required="true" requiredMessage="#{bundle.EditSeccionRequiredMessage_ramosigla}">
+                           
+                            <f:selectItems value="#{ramoController.itemsAvailableSelectOne}"
+                                           var="ramosiglaItem"
+                                           itemValue="#{ramosiglaItem.sigla}"/>
+                            <f:ajax listener = "#{seccionController.getSeccionesRamo}" render="seccioncodseccion" />
+                        </p:selectOneMenu>
+                                  
                         <p:outputLabel value="Sección:" for="seccioncodseccion" />
                         <p:selectOneMenu id="seccioncodseccion" value="#{claseController.selected.seccioncodseccion}" required="true" requiredMessage="#{bundle.EditClaseRequiredMessage_seccioncodseccion}">
-                            <f:selectItems value="#{seccionController.itemsAvailableSelectOne}"
-                                           var="seccioncodseccionItem"
-                                           itemValue="#{seccioncodseccionItem}"/>
-                        </p:selectOneMenu>
+                                             
+                            <f:selectItems value="#{seccionController.listaSecciones}"
+                                       var="seccioncodseccionItem"
+                                       
+                                       itemValue="#{seccioncodseccionItem}"
+                                       itemLabel="#{seccionItem.seccion}"/>
+                            </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{claseController.create}" value="Crear" update="display,:ClaseListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClaseCreateDialog');"/>
                     <p:commandButton value="Cancelar" onclick="ClaseCreateDialog.hide()"/>

@@ -1,11 +1,15 @@
 package jsf;
 
+import entities.Ramo;
 import entities.Seccion;
 import jsf.util.JsfUtil;
 import jsf.util.JsfUtil.PersistAction;
 import models.SeccionFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -18,6 +22,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.faces.event.AjaxBehaviorEvent;
 
 @Named("seccionController")
 @SessionScoped
@@ -119,6 +124,59 @@ public class SeccionController implements Serializable {
 
     public List<Seccion> getItemsAvailableSelectOne() {
         return getFacade().findAll();
+    }
+    
+    private String sigla ="";
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+    
+    private List <Seccion> listaSecciones = new ArrayList<>();
+
+    public List<Seccion> getListaSecciones() {
+        return listaSecciones;
+    }
+
+    
+    public void setListaSecciones(List<Seccion> listaSecciones) {
+        this.listaSecciones = listaSecciones;
+    }
+            
+    public void getSeccionesRamo(AjaxBehaviorEvent e) {
+        String cod_ramo = sigla;
+       List<Seccion> todaslasSecciones = getFacade().findAll();
+       listaSecciones.clear();
+        for (Seccion seccion : todaslasSecciones) {
+            if(seccion.getRamosigla().getSigla().equals(cod_ramo))
+                listaSecciones.add(seccion);
+        }
+        System.out.println("Buscando las secciones del ramo: "+cod_ramo);
+        for (Seccion listaSeccione : listaSecciones) {
+            System.out.println(listaSeccione.getSeccion());
+        }
+    }
+    
+     Collection<Seccion> getSeccionesRamo(Ramo ramo)
+    {
+        
+        return ramo.getSeccionCollection();
+    }
+     
+     public Collection<Seccion> getSeccionesConClases(Ramo ramo)
+    {
+        System.out.println("Buscando secciones con clase para el ramo:");
+        System.out.println(ramo.getNomRamo());
+        Collection<Seccion> secciones = new ArrayList();
+        for (Seccion seccion : getSeccionesRamo(ramo)) {
+            if(seccion.getClaseCollection().size()>0)
+                secciones.add(seccion);
+        }
+        return secciones;
     }
 
     @FacesConverter(forClass = Seccion.class)

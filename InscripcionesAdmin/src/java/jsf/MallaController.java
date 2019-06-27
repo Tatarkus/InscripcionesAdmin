@@ -1,11 +1,14 @@
 package jsf;
 
 import entities.Malla;
+import entities.Ramo;
 import jsf.util.JsfUtil;
 import jsf.util.JsfUtil.PersistAction;
 import models.MallaFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -74,6 +77,8 @@ public class MallaController implements Serializable {
         }
     }
 
+   
+    
     public List<Malla> getItems() {
         if (items == null) {
             items = getFacade().findAll();

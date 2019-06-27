@@ -53,33 +53,48 @@ public class InscribirBean implements Serializable {
     
     public void ObtenerOferta(int run)
     {
+        oferta.clear();
         usr = usrF.find(run);
         if(usr != null)
         {
-            oferta = usr.getMallacodmalla().getRamoCollection();
+            for (Ramo ramo : usr.getMallacodmalla().getRamoCollection()) {
+                for(Seccion sec :ramo.getSeccionCollection())
+                {
+                    if(sec.getClaseCollection().size()>0)
+                    {
+                         oferta.add(ramo);
+                         break;
+                    }
+                }
+            }
+           
 
         }
         
     }
     
-    public void obtenerSecciones(AjaxBehaviorEvent e)
+public void obtenerSecciones(AjaxBehaviorEvent e)
     {
         System.out.println("listener llamado con ramo " + cod_ramo);
-        
+        secciones.clear();
                if(cod_ramo != null)
                {
                    
                     r = ramoF.find(cod_ramo);
                     if(r != null)
                     {
-                        secciones = r.getSeccionCollection();
+                        for (Seccion sec : r.getSeccionCollection()) {
+                            if(sec.getClaseCollection().size()>0)
+                                secciones.add(sec);
+                        }
+                        
                         cod_ramo = r.getSigla();
                         
                     }
                }else
                    secciones.clear();
-
-    }
+               
+}
     
     public void inscribir()
     {
@@ -91,7 +106,7 @@ public class InscribirBean implements Serializable {
                 Seccion s1 = new Seccion();
                 s1 = seccionF.find(cod_seccion);
                 System.out.println("Seccion: " + s1.getCodSeccion());
-                
+                System.out.println("Ramo: " + s1.getRamosigla().getNomRamo());
                 Collection<Clase> lista = new ArrayList<>();
                 lista = claseF.findAll();
                 
@@ -99,11 +114,13 @@ public class InscribirBean implements Serializable {
                 for (Clase c : lista ) {
                     if(c.getSeccioncodseccion().getCodSeccion() == s1.getCodSeccion())
                     {
-                    System.out.println("Se encontro una clase");
-                    horario.setClasecodclase(c);
-                    horario.setUsuariorun(usr);
-                    horario.setCodHorario(horarioF.count());
-                    horarioF.create(horario);
+                        System.out.println("Encontrada clase:");
+                        horario.setClasecodclase(c);
+                        horario.setUsuariorun(usr);
+                                                System.out.println("Horario :" + horarioF.count());
+
+                        horario.setCodHorario(horarioF.count());
+                        horarioF.create(horario);
 
                    }
                 }
