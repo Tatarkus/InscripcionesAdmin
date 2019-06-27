@@ -228,11 +228,33 @@ ENGINE = InnoDB;
 
 SHOW WARNINGS;
 
+
+-- -----------------------------------------------------
+-- Table `InscripcionesAdmin`.`Contacto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `InscripcionesAdmin`.`Contacto` ;
+
+CREATE TABLE IF NOT EXISTS `InscripcionesAdmin`.`Contacto` (
+  `id_contacto` INT NOT NULL AUTO_INCREMENT,
+  `nombre_contacto` VARCHAR(30) NOT NULL,
+  `correo` VARCHAR(30) NOT NULL,
+  `telefono` INT NOT NULL,
+  `motivo` VARCHAR(30) NOT NULL,
+  `requerimiento` VARCHAR(300) NOT NULL,
+  `fecha_envio` DATE NOT NULL,
+  PRIMARY KEY (`id_contacto`))
+ENGINE = InnoDB;
+SHOW WARNINGS;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
+-- -----------------------------------------------------
+-- MURO DE LA VERGÜENZA
+-- -----------------------------------------------------
+/*
 create table if not exists CONTACTO
 (
 ID_CONTACTO INTEGER not null primary key auto_increment,
@@ -243,4 +265,8 @@ TELEFONO int not null,
 MOTIVO VARCHAR(30) not null,
 REQUERIMIENTO VARCHAR(300) not null,
 FECHA_ENVIO date
-);
+);30
+*/
+-- -----------------------------------------------------
+-- MURO DE LA VERGÜENZA
+-- -----------------------------------------------------
