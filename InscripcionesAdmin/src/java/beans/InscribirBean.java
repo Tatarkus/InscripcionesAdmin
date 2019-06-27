@@ -98,6 +98,8 @@ public void obtenerSecciones(AjaxBehaviorEvent e)
     
     public void inscribir()
     {
+                if(cod_ramo == null)
+                    return;
                 Horario horario = new Horario();
                 System.out.println("Se va a inscribir un horario para:");
                 System.out.println(usr.getNombres() + " " + usr.getApellidos());

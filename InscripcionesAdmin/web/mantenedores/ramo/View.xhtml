@@ -17,6 +17,8 @@
                         <h:outputText value="#{bundle.ViewRamoLabel_nomRamo}"/>
                         <h:outputText value="#{ramoController.selected.nomRamo}" title="#{bundle.ViewRamoTitle_nomRamo}"/>
                     </p:panelGrid>
+                                        <p:commandButton id="MallaRamoButton"   icon="ui-icon-pencil" value="Agregar a Malla" update=":aMallaForm" oncomplete="PF('MallaRamo').show()"/>
+
                     <p:commandButton value="#{bundle.Close}" onclick="RamoViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition>
+        
+        <p:dialog id="MallaRamoDialog" widgetVar="MallaRamo" modal="true" resizable="false" appendTo="@(body)" header="MallaRamo">
+            
+
+           <h:form id="aMallaForm">  
+                <h:panelGroup id="display">
+                        <p:panelGrid columns="2" rendered="#{ramoController.selected != null}" >
+                            
+                            <p:outputLabel value="Semestre" />
+                            <p:inputText id="semestre" value="#{mallaController.semestre}" title="Semestre" required="true"/>
+                                                        <p:outputLabel value="Malla" />
+
+                            <p:selectOneMenu id="seleccionmalla" value="#{mallaController.selected}"
+                                              >
+                                <f:selectItem itemLabel="Seleccione una malla" itemValue=""/>
+                                <f:selectItems value="#{mallaController.itemsAvailableSelectOne}"
+                                       var="mallaItem"
+                                       itemValue="#{mallaItem}"
+                                       itemLabel="#{mallaItem.nomMalla}"
+                                       
+                                       />
+                                
+                            </p:selectOneMenu>
+                            
+                        </p:panelGrid>
+                        
+                        <p:commandButton actionListener="#{mallaController.MallaRamo(ramoController.selected)}" value="Crear" update="display,:RamoListForm:datalist,:growl" onclick="MallaRamoDialog.hide()" />
+                         <p:commandButton value="Cancelar" onclick="UsuarioCreateDialog.hide()"/>
+                        
+                    </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

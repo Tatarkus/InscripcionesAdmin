@@ -30,6 +30,16 @@ public class MallaController implements Serializable {
     private models.MallaFacade ejbFacade;
     private List<Malla> items = null;
     private Malla selected;
+    private int semestre;
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+    
 
     public MallaController() {
     }
@@ -51,7 +61,20 @@ public class MallaController implements Serializable {
     private MallaFacade getFacade() {
         return ejbFacade;
     }
+    
+    public void MallaRamo(Ramo ramo)
+    {
+        Collection<Ramo> ramos =  selected.getRamoCollection();
+        ramos.add(ramo);
+       
+        selected.setRamoCollection(ramos);
+                    System.out.println("Malla: "+selected.getNomMalla());
 
+        for (Ramo ramo1 : ramos) {
+            System.out.println("ramo: "+ramo1.getNomRamo());
+        }
+        this.getFacade().edit(selected);
+    }
     public Malla prepareCreate() {
         selected = new Malla();
         initializeEmbeddableKey();

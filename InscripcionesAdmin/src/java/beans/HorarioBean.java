@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import models.ClaseFacade;
 import models.HorarioFacade;
@@ -114,5 +116,10 @@ public class HorarioBean implements Serializable{
         list.addAll(Arrays.asList(array));
     }
     return list;
+}
+    
+    public String destruir() {
+    FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+    return "login?faces-redirect=true";
 }
 }
